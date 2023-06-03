@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.coolku.mapper.UserMapper">
+    <select id="selectByUserName" resultType="cn.tedu.coolku.pojo.vo.UserVO">
+        SELECT u.user_id id,
+               u.user_userName userName,
+               u.user_password password,
+               u.user_first_login firstLogin,
+               ur.role_id roleId,
+               rs.role_name roleName,
+               rs.role_desc roleDesc,
+               rs.role_url_prefix roleUrlPrefix
+        FROM wms_user u,wms_user_role ur,wms_roles rs
+        WHERE u.user_id=ur.user_id
+        AND ur.role_id=rs.role_id
+        AND u.user_username = #{userName}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+

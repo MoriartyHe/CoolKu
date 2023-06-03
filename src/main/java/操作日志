@@ -1,0 +1,8 @@
+2023/6/3
+宋帅:
+1.用户注册以及更新时需要三张表User\UserRole\Roles
+2.状态码自己按需要添加到response/StatusCode中,每人按业务分块写,不要重复
+3.UserVO包含了用户所有信息,查询等业务注意
+    localStorage.user内容如下:
+    '{"password":null,"username":"2","authorities":[{"authority":"systemAdmin"}],"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true,"id":1,"firstLogin":1,"roleId":1,"roleName":"systemAdmin","roleDesc":null,"roleUrlPrefix":"systemAdmin"}'
+4.密码存储及验证暂时无加密,等登录做出来再做加密
